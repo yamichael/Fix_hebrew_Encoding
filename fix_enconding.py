@@ -28,8 +28,8 @@ def fix_phrase(phrase):
 
 
 def create_dict():
-    phrase = 'אבגדהוזחטיכךלמםנףסעפףצץקרשת'
-    phrase_gibrish = 'àáâãäåæçèéëêìîíðóñòôóöõ÷øùú'
+    phrase = 'אבגדהוזחטיכךלמםנןסעפףצץקרשת'
+    phrase_gibrish = 'àáâãäåæçèéëêìîíðïñòôóöõ÷øùú'
     gibrish_to_hebrew = dict()
     for heb, gib in zip(phrase, phrase_gibrish):
         gibrish_to_hebrew[gib] = heb
@@ -38,13 +38,13 @@ def create_dict():
 
 def fast_fix(phrase):
     gibrish_to_hebrew = {'à': 'א', 'á': 'ב', 'â': 'ג', 'ã': 'ד', 'ä': 'ה', 'å': 'ו', 'æ': 'ז', 'ç': 'ח', 'è': 'ט',
-                         'é': 'י', 'ë': 'כ', 'ê': 'ך', 'ì': 'ל', 'î': 'מ', 'í': 'ם', 'ð': 'נ', 'ó': 'ף', 'ñ': 'ס',
-                         'ò': 'ע', 'ô': 'פ', 'ö': 'צ', 'õ': 'ץ', '÷': 'ק', 'ø': 'ר', 'ù': 'ש', 'ú': 'ת'}
+                         'é': 'י', 'ë': 'כ', 'ê': 'ך', 'ì': 'ל', 'î': 'מ', 'í': 'ם', 'ð': 'נ', 'ï': 'ן', 'ñ': 'ס',
+                         'ò': 'ע', 'ô': 'פ', 'ó': 'ף', 'ö': 'צ', 'õ': 'ץ', '÷': 'ק', 'ø': 'ר', 'ù': 'ש', 'ú': 'ת'}
+
     translated = ""
     for letter in phrase:
         if letter in gibrish_to_hebrew:
             translated += gibrish_to_hebrew[letter]
         else:
             translated += letter
-
     return translated
